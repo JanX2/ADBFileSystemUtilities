@@ -69,7 +69,7 @@
 //for when you don't care about failure reasons.
 - (id) resourceValueForKey: (NSString *)key;
 
-//Returns the localized display name of the file: i.e., the value of NSURLLocalizedNameKey.
+//Returns the localized display name of the item: i.e., the value of NSURLLocalizedNameKey.
 - (NSString *) localizedName;
 
 //Returns the name of the item: i.e., the value of NSURLLocalizedNameKey.
