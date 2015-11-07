@@ -72,7 +72,10 @@
 //Returns the localized display name of the file: i.e., the value of NSURLLocalizedNameKey.
 - (NSString *) localizedName;
 
-//Returns whether this URL represents a directory: i.e. the value of NSURLIsDirectoryKey.
+//Returns the name of the item: i.e., the value of NSURLLocalizedNameKey.
+- (NSString *) itemNameADB;
+
+//Returns whether this URL represents a directory: i.e. the value of NSURLNameKey.
 - (BOOL) isDirectory;
 
 @end

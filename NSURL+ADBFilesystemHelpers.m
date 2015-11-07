@@ -160,6 +160,11 @@
     return [self resourceValueForKey: NSURLLocalizedNameKey];
 }
 
+- (NSString *) itemNameADB
+{
+    return [self resourceValueForKey: NSURLNameKey];
+}
+
 @end
 
 
