@@ -154,6 +154,11 @@
     return [[self resourceValueForKey: NSURLIsDirectoryKey] boolValue];
 }
 
+- (NSURL *) parentDirectoryURLADB
+{
+    return [self resourceValueForKey: NSURLParentDirectoryURLKey];
+}
+
 
 - (NSString *) localizedName
 {

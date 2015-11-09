@@ -78,6 +78,9 @@
 //Returns whether this URL represents a directory: i.e. the value of NSURLNameKey.
 - (BOOL) isDirectory;
 
+//Returns the URL of the parent directory: i.e. the value of NSURLParentDirectoryURLKey.
+- (NSURL *) parentDirectoryURLADB;
+
 @end
 
 
