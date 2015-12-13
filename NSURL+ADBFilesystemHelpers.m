@@ -154,6 +154,11 @@
     return [[self resourceValueForKey: NSURLIsDirectoryKey] boolValue];
 }
 
+- (BOOL) isSymbolicLink
+{
+    return [[self resourceValueForKey: NSURLIsSymbolicLinkKey] boolValue];
+}
+
 - (NSURL *) parentDirectoryURLADB
 {
     return [self resourceValueForKey: NSURLParentDirectoryURLKey];

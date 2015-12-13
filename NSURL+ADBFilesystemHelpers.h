@@ -81,6 +81,9 @@
 //Returns the URL of the parent directory: i.e. the value of NSURLParentDirectoryURLKey.
 - (NSURL *) parentDirectoryURLADB;
 
+//Returns whether this URL represents a symbolic link: i.e. the value of NSURLIsSymbolicLinkKey.
+- (BOOL) isSymbolicLink;
+
 @end
 
 
