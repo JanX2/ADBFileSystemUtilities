@@ -96,7 +96,7 @@
 //from the specified UTI, or if the URL has a path extension that would be suitable for the specified UTI.
 - (BOOL) conformsToFileType: (NSString *)UTI;
 
-//Given a set of Uniform TypeIdentifiers, returns the first one to which this URL conforms,
+//Given a set of Uniform Type Identifiers, returns the first one to which this URL conforms,
 //or nil if it doesn't match any of them.
 - (NSString *) matchingFileType: (NSSet *)UTIs;
 
