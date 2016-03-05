@@ -63,6 +63,11 @@
 
 @interface NSURL (ADBResourceValues)
 
+//Returns whether the item referenced by the URL is reachable.
+//It is more efficient to attempt another operation and handle any failure that may occur,
+//instead of calling this. Use only, if you just need to know, if it is reachable. 
+- (BOOL) isReachableADB;
+
 //Returns the value for the specified resource property.
 //Returns nil if the property cannot be retrieved for any reason.
 //This is just a simpler calling syntax for NSURL getResourceValue:forKey:error:

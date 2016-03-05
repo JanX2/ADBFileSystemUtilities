@@ -139,6 +139,12 @@
 
 @implementation NSURL (ADBResourceValues)
 
+- (BOOL) isReachableADB
+{
+    BOOL isReachable = [self checkResourceIsReachableAndReturnError:NULL];
+    return isReachable;
+}
+
 - (id) resourceValueForKey: (NSString *)key
 {
     id value;
