@@ -84,6 +84,11 @@
 //Returns whether this URL represents a symbolic link: i.e. the value of NSURLIsSymbolicLinkKey.
 - (BOOL) isSymbolicLink;
 
+//Returns whether this URL references the same resource as otherURL.
+//Returns NO if any of the values cannot be retrieved for some reason.
+//Does not work e.g. on AFP volumes as these don’t expose hard links.
+- (BOOL) referencesSameResourceAsURL:(NSURL *)otherURL;
+
 @end
 
 

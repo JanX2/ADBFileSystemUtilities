@@ -175,6 +175,23 @@
     return [self resourceValueForKey: NSURLNameKey];
 }
 
+- (BOOL) referencesSameResourceAsURL:(NSURL *)otherURL
+{
+    id selfFileID = [self resourceValueForKey:NSURLFileResourceIdentifierKey];
+    if (selfFileID == nil)  return NO;
+    
+    id otherFileID = [otherURL resourceValueForKey:NSURLFileResourceIdentifierKey];
+    if (otherFileID == nil)  return NO;
+
+    if ([selfFileID isEqual:otherFileID]) {
+        // URLs point to the same file (inode)
+        return YES;
+    }
+    else {
+        return NO;
+    }
+}
+
 @end
 
 
