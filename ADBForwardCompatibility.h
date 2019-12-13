@@ -96,3 +96,11 @@
 - (void) setLayerUsesCoreImageFilters: (BOOL)flag;
 
 @end
+
+#pragma mark - NSURLResourceKey
+#ifdef __MAC_OS_X_VERSION_MAX_ALLOWED
+#if __MAC_OS_X_VERSION_MAX_ALLOWED >= 101300
+#else
+typedef NSString * NSURLResourceKey;
+#endif
+#endif

@@ -66,8 +66,13 @@ NSString * const NSWindowDidExitFullScreenNotification = @"NSWindowDidExitFullSc
     SEL createSymlink = @selector(createSymbolicLinkAtURL:withDestinationURL:error:);
     [self addInstanceMethod: createSymlink toClass: proxiedClass];
     
+#ifdef __MAC_OS_X_VERSION_MAX_ALLOWED
+#if __MAC_OS_X_VERSION_MAX_ALLOWED >= 10800
+#else
     SEL trashItem = @selector(trashItemAtURL:resultingItemURL:error:);
     [self addInstanceMethod: trashItem toClass: proxiedClass];
+#endif
+#endif
 }
 
 - (BOOL) createDirectoryAtURL: (NSURL *)URL
@@ -91,6 +96,9 @@ NSString * const NSWindowDidExitFullScreenNotification = @"NSWindowDidExitFullSc
     
 }
 
+#ifdef __MAC_OS_X_VERSION_MAX_ALLOWED
+#if __MAC_OS_X_VERSION_MAX_ALLOWED >= 10800
+#else
 - (BOOL) trashItemAtURL: (NSURL *)url resultingItemURL: (out NSURL **)outResultingURL error: (out NSError **)outError
 {
     const char *originalPath = [(NSFileManager *)self fileSystemRepresentationWithPath: url.path];
@@ -115,6 +123,8 @@ NSString * const NSWindowDidExitFullScreenNotification = @"NSWindowDidExitFullSc
         return NO;
     }
 }
+#endif
+#endif
 @end
 
 
