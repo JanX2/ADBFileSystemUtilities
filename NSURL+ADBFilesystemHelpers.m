@@ -198,6 +198,18 @@
     }
 }
 
+- (NSNumber *) fileSizeADB
+{
+    return [self resourceValueForKey: NSURLFileSizeKey];
+    
+}
+
+- (NSDate *) contentModificationDateADB
+{
+    return [self resourceValueForKey: NSURLContentModificationDateKey];
+    
+}
+
 @end
 
 

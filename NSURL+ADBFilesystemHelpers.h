@@ -94,6 +94,12 @@
 //Does not work e.g. on AFP volumes as these don’t expose hard links.
 - (BOOL) referencesSameResourceAsURL:(NSURL *)otherURL;
 
+//Returns the file size of the item: i.e., the value of NSURLContentModificationDateKey.
+- (NSDate *) contentModificationDateADB;
+
+//Returns the file size of the item: i.e., the value of NSURLFileSizeKey.
+- (NSNumber *) fileSizeADB;
+
 @end
 
 
